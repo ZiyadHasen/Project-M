@@ -1,0 +1,134 @@
+import assets from '@/assets';
+
+const sideBarContent = [
+  {
+    order: '1',
+    mainTitle: '회원 관리',
+    icon: assets.member,
+    activeIcon: assets.memberActive,
+    init: '/admin/membership',
+    firstRoute: '/admin/membership/members-management',
+    subTitles: [
+      {
+        label: '대시보드', //dashboard
+        route: '/admin/membership/members-management/dashboard',
+      },
+
+      {
+        label: '회원정보 등록', //Register member information
+        route: '/admin/membership/members-management/register-member',
+      },
+      {
+        label: '1:1 문의 관리', //1:1 inquiry management
+        route: '/admin/membership/members-management/inquiries-1to1',
+      },
+      {
+        label: '고객만족도 등록', //customer satisfaction
+        route: '/admin/membership/members-management/customer-satisfaction',
+      },
+      {
+        label: '접속정보조회', //Connection information inquiry
+        route: '/admin/membership/members-management/connection-info',
+      },
+      {
+        label: '고객만족도조회', //Customer satisfaction inquiry
+        route: '/admin/membership/members-management/customer-inquiry',
+      },
+    ],
+  },
+  {
+    order: '2',
+    mainTitle: '매출 관리',
+    icon: assets.sales,
+    activeIcon: assets.salesActive,
+    init: '/admin/sales',
+    firstRoute: '/admin/sales/sales-management',
+    subTitles: [],
+  },
+  {
+    order: '3',
+    mainTitle: '단체방 관리',
+    icon: assets.groupRoom,
+    activeIcon: assets.groupRoomActive,
+    init: '/admin/group-room',
+    firstRoute: '/admin/group-room/group-room-management',
+    subTitles: [
+      {
+        label: '단체방 등록', //register group room
+        route: '/admin/group-room/group-room-management/register-g-room',
+      },
+      {
+        label: '코스 등록', //course registration
+        route: '/admin/group-room/group-room-management/course-registration',
+      },
+      {
+        label: '경유지 등록', //register transit point
+        route: '/admin/group-room/group-room-management/transit-register',
+      },
+      {
+        label: '문제 등록', //register a problem
+        route: '/admin/group-room/group-room-management/problem-registration',
+      },
+      {
+        label: '게임진행 현황', //game progress status
+        route: '/admin/group-room/group-room-management/game-progress',
+      },
+    ],
+  },
+
+  {
+    order: '4',
+    mainTitle: '시스템 관리',
+    icon: assets.system,
+    activeIcon: assets.salesActive,
+    init: '/system-admin-management',
+    firstRoute: '/admin/system-admin/system-admin-management',
+    subTitles: [
+      {
+        label: '공통코드', //common code
+        route: '/admin/system-admin/system-admin-management/common-code',
+      },
+      {
+        label: '휴일정보 등록', //register holiday information
+        route:
+          '/admin/system-admin/system-admin-management/holiday-info-register',
+      },
+      {
+        label: '투어시간 일괄적용', //tour time applies in full
+        route: '/admin/system-admin/system-admin-management/tour-time-applies',
+      },
+      {
+        label: '투어시간 관리', //tour time management
+        route:
+          '/admin/system-admin/system-admin-management/tour-time-management',
+      },
+      {
+        label: '공지사항 등록', //register notice
+        route: '/admin/system-admin/system-admin-management/notice-register',
+      },
+      {
+        label: '자주묻는질문 등록', //register FAQ
+        route: '/admin/system-admin/system-admin-management/FAQ-register',
+      },
+      {
+        label: '회사정보 등록', //register company info
+        route: '/admin/system-admin/system-admin-management/company-info',
+      },
+      {
+        label: '이용약관 등록', //term of use registration
+        route: '/admin/system-admin/system-admin-management/registration-term',
+      },
+      {
+        label: '개인정보처리방침 등록', //Register your personal information processing policy
+        route:
+          '/admin/system-admin/system-admin-management/personal-information-policy',
+      },
+      {
+        label: '마케팅활용동의 등록', //Register consent for marketing use
+        route: '/admin/system-admin/system-admin-management/register-marketing',
+      },
+    ],
+  },
+];
+
+export default sideBarContent;

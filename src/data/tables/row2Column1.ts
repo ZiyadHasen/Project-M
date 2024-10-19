@@ -2,11 +2,14 @@ const demo = [
   {
     id: 1,
     number: 1,
-    paymentDate: "YYYY-MM-DD ",
-    expirationDate: "YYYY-MM-DD ",
-    paymentMethod: "인앱결제",
-    payer: "닉네임",
-    amount: "0,000원",
+    No: '10',
+    NickName: '홍길동',
+    email: 'aaa@aa.co.kr',
+    phoneNumber: '010-1234-5678',
+    dateJoining: '2024.08.01',
+    birthYear: '1992',
+    gender: '남자',
+    status: '탈퇴',
   },
 ];
 

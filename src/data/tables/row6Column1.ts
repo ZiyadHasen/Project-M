@@ -2,10 +2,9 @@ const demo = [
   {
     id: 1,
     number: 1,
-    dateAccess: '2024.08.02',
-    pageViews: '150',
+    evaluationDay: '2024.08.02',
+    numberOfEvaluator: '150',
     note: '',
-    
   },
 ];
 

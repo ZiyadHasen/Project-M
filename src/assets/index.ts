@@ -6,6 +6,7 @@ import systemActive from '@/assets/icons/sidebar/system-active.svg';
 import system from '@/assets/icons/sidebar/system.svg';
 import memberActive from '@/assets/icons/sidebar/member-active.svg';
 import member from '@/assets/icons/sidebar/member.svg';
+import questionMark from '@/assets/icons/mainPart/questionMark.svg';
 
 const assets = {
   member,
@@ -16,6 +17,7 @@ const assets = {
   groupRoomActive,
   system,
   systemActive,
+  questionMark,
 };
 
 export default assets;

@@ -1,5 +1,5 @@
-import React from "react";
-import { Select, SelectItem } from "@nextui-org/react";
+import React from 'react';
+import { Select, SelectItem } from '@nextui-org/react';
 
 const DropDownWithLabel = ({
   title,
@@ -17,26 +17,33 @@ const DropDownWithLabel = ({
   insideStyles?: string;
 }) => {
   return (
-    <div className="flex items-center">
-      <h4 className={`${titleStyles}  text-mainBlack text-base text-nowrap`}>
+    <div className=''>
+      <h4
+        className={`${titleStyles}  text-mainGray font-bold mb-2  text-sm text-nowrap`}
+      >
         {title}
       </h4>
       <div>
         <Select
-          className="max-w-xs"
+          className='max-w-xs text-mainGray'
           classNames={{
+            value: ['text-[15px] text-gray'], // Selected value text color
+            listbox: ['text-mainGray'], // Text color of the dropdown options
             mainWrapper: [
-              `${selectStyles} border-1 border-[#D2D5D6]  rounded-[5px] text-mainGray`,
+              `${selectStyles} bg-[#ffffff]  border-[#DADFE2] rounded-[12px] text-mainGray `,
             ],
-            trigger: [`${insideStyles}  bg-[#ffffff] `],
-            value: ["text-[15px] "],
+            trigger: [
+              `${insideStyles}  bg-[#ffffff] border-[1px] border-[#DADFE2] text-mainGray`,
+            ],
           }}
           disallowEmptySelection={true}
           defaultSelectedKeys={[defaultSelectedKeys]}
-          aria-label="Toggle selection"
+          aria-label='Toggle selection'
         >
           {options.map((option) => (
-            <SelectItem key={option.key}>{option.label}</SelectItem>
+            <SelectItem key={option.key} className='text-mainGray'>
+              {option.label}
+            </SelectItem>
           ))}
         </Select>
       </div>

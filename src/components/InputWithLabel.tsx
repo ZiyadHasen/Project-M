@@ -1,4 +1,4 @@
-import { Input } from "@nextui-org/react";
+import { Input } from '@nextui-org/react';
 
 const InputWithLabel = ({
   label,
@@ -9,7 +9,7 @@ const InputWithLabel = ({
   inputParentStyles,
   inputStyles,
   placeholder,
-  type = "text",
+  type = 'text',
 }: {
   label: string;
   defaultValue?: string;
@@ -19,12 +19,14 @@ const InputWithLabel = ({
   inputParentStyles?: string;
   inputStyles?: string;
   placeholder?: string;
-  type?: "text" | "number" | "date";
+  type?: 'text' | 'number' | 'date';
 }) => {
   return (
-    <section className={`flex items-center ${mainStyles}`}>
+    <section className={`${mainStyles}`}>
       <div>
-        <h3 className={`${labelStyles} text-mainBlack  text-base text-nowrap`}>
+        <h3
+          className={`${labelStyles} text-mainGray font-bold mb-2  text-sm text-nowrap`}
+        >
           {label}
         </h3>
       </div>
@@ -38,10 +40,10 @@ const InputWithLabel = ({
             onValueChange={handelChangeText}
             classNames={{
               input: [
-                "placeholder:text-[#A1A9A3] placeholder:text-[14px] text-[15px]",
+                'placeholder:text-[#A1A9A3] placeholder:text-[14px] text-[15px]',
               ],
               inputWrapper: [
-                `${inputStyles}  bg-[#ffffff] border-[1px] border-[#D2D5D6] rounded-[5px] `,
+                `${inputStyles}  bg-[#ffffff] border-[1px] border-[#DADFE2] rounded-[12px] `,
               ],
             }}
           />

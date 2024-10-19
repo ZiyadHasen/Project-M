@@ -2,11 +2,11 @@ const demo = [
   {
     id: 0,
     number: 0,
-    nickname: "닉네임",
-    loginType: "카카오",
-    joinDate: "YYYY-MM-DD ",
-    rating: "등급1",
-    viewDetails: "상세보기",
+    tourTime: '11:10',
+    reservationName: '홍길동',
+    phoneNumber: '010-1111-2222',
+    tourParticipant: '10',
+    tourCourse: '개항장거리 - 차이나타운',
   },
 ];
 

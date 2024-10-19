@@ -7,32 +7,32 @@ const sideBarContent = [
     icon: assets.member,
     activeIcon: assets.memberActive,
     init: '/admin/membership',
-    firstRoute: '/admin/membership/members-management',
+    firstRoute: '/admin/membership/dashboard',
     subTitles: [
       {
         label: '대시보드', //dashboard
-        route: '/admin/membership/members-management/dashboard',
+        route: '/admin/membership/dashboard',
       },
 
       {
         label: '회원정보 등록', //Register member information
-        route: '/admin/membership/members-management/register-member',
+        route: '/admin/membership/register-member',
       },
       {
         label: '1:1 문의 관리', //1:1 inquiry management
-        route: '/admin/membership/members-management/inquiries-1to1',
+        route: '/admin/membership/inquiries-1to1',
       },
       {
         label: '고객만족도 등록', //customer satisfaction
-        route: '/admin/membership/members-management/customer-satisfaction',
+        route: '/admin/membership/customer-satisfaction',
       },
       {
         label: '접속정보조회', //Connection information inquiry
-        route: '/admin/membership/members-management/connection-info',
+        route: '/admin/membership/connection-info',
       },
       {
         label: '고객만족도조회', //Customer satisfaction inquiry
-        route: '/admin/membership/members-management/customer-inquiry',
+        route: '/admin/membership/customer-inquiry',
       },
     ],
   },
@@ -42,7 +42,7 @@ const sideBarContent = [
     icon: assets.sales,
     activeIcon: assets.salesActive,
     init: '/admin/sales',
-    firstRoute: '/admin/sales/sales-management',
+    firstRoute: '/admin/sales',
     subTitles: [],
   },
   {
@@ -51,27 +51,27 @@ const sideBarContent = [
     icon: assets.groupRoom,
     activeIcon: assets.groupRoomActive,
     init: '/admin/group-room',
-    firstRoute: '/admin/group-room/group-room-management',
+    firstRoute: '/admin/group-room/register-g-room',
     subTitles: [
       {
         label: '단체방 등록', //register group room
-        route: '/admin/group-room/group-room-management/register-g-room',
+        route: '/admin/group-room/register-g-room',
       },
       {
         label: '코스 등록', //course registration
-        route: '/admin/group-room/group-room-management/course-registration',
+        route: '/admin/group-room/course-registration',
       },
       {
         label: '경유지 등록', //register transit point
-        route: '/admin/group-room/group-room-management/transit-register',
+        route: '/admin/group-room/transit-register',
       },
       {
         label: '문제 등록', //register a problem
-        route: '/admin/group-room/group-room-management/problem-registration',
+        route: '/admin/group-room/problem-registration',
       },
       {
         label: '게임진행 현황', //game progress status
-        route: '/admin/group-room/group-room-management/game-progress',
+        route: '/admin/group-room/game-progress',
       },
     ],
   },
@@ -81,47 +81,44 @@ const sideBarContent = [
     mainTitle: '시스템 관리',
     icon: assets.system,
     activeIcon: assets.salesActive,
-    init: '/system-admin-management',
-    firstRoute: '/admin/system-admin/system-admin-management',
+    init: '/admin/system-admin',
+    firstRoute: '/admin/system-admin/common-code',
     subTitles: [
       {
         label: '공통코드', //common code
-        route: '/admin/system-admin/system-admin-management/common-code',
+        route: '/admin/system-admin/common-code',
       },
       {
         label: '휴일정보 등록', //register holiday information
-        route:
-          '/admin/system-admin/system-admin-management/holiday-info-register',
+        route: '/admin/system-admin/holiday-info-register',
       },
       {
         label: '투어시간 일괄적용', //tour time applies in full
-        route: '/admin/system-admin/system-admin-management/tour-time-applies',
+        route: '/admin/system-admin/tour-time-applies',
       },
       {
         label: '투어시간 관리', //tour time management
-        route:
-          '/admin/system-admin/system-admin-management/tour-time-management',
+        route: '/admin/system-admin/tour-time-management',
       },
       {
         label: '공지사항 등록', //register notice
-        route: '/admin/system-admin/system-admin-management/notice-register',
+        route: '/admin/system-admin/notice-register',
       },
       {
         label: '자주묻는질문 등록', //register FAQ
-        route: '/admin/system-admin/system-admin-management/FAQ-register',
+        route: '/admin/system-admin/FAQ-register',
       },
       {
         label: '회사정보 등록', //register company info
-        route: '/admin/system-admin/system-admin-management/company-info',
+        route: '/admin/system-admin/company-info',
       },
       {
         label: '이용약관 등록', //term of use registration
-        route: '/admin/system-admin/system-admin-management/registration-term',
+        route: '/admin/system-admin/registration-term',
       },
       {
         label: '개인정보처리방침 등록', //Register your personal information processing policy
-        route:
-          '/admin/system-admin/system-admin-management/personal-information-policy',
+        route: '/admin/system-admin/personal-information-policy',
       },
       {
         label: '마케팅활용동의 등록', //Register consent for marketing use

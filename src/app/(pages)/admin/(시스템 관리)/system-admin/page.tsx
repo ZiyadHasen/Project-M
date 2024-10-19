@@ -1,7 +1,7 @@
 import React from 'react';
 
-const SystemAdminPage = () => {
-  return <div>SystemAdminPage</div>;
+const SystemAdminManagementPage = () => {
+  return <div>SystemAdminManagementPage</div>;
 };
 
-export default SystemAdminPage;
+export default SystemAdminManagementPage;

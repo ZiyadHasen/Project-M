@@ -40,7 +40,7 @@ const Page = () => {
           />
         </div>
         <div className='w-full'>
-          <Link href='/admin/membership/members-management'>
+          <Link href='/admin/membership/dashboard'>
             <Button className='bg-rootBtn text-mainWhite w-full rounded-[10px] text-[16px] font-normal leading-[22px]'>
               로그인
             </Button>

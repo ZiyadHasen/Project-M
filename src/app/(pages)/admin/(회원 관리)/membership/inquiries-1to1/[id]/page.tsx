@@ -1,157 +1,124 @@
 "use client";
+import MainButton from "@/components/button";
 import CommonHeader from "@/components/CommonHeader";
-import {
-  Checkbox,
-  Link,
-  Pagination,
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-} from "@nextui-org/react";
+import DropDownWithLabel from "@/components/DropDownWithLabel";
+import InputWithLabelActive from "@/components/InputWithLabelActive";
+import { Input, Textarea } from "@nextui-org/react";
+import React from "react";
 
-import row2Column1 from "@/data/tables/column1&2/row2Column1";
-import React, { useState } from "react";
-
-import BlueAndBlackBtn from "@/components/blueAndBlackBtn";
-
-const InquiryOneToOnePage = () => {
-  // Pagination Logic
-  const [page, setPage] = useState(1);
-
-  const rowsPerPage = 10;
-
-  const pages = Math.ceil(row2Column1.length / rowsPerPage);
-
-  const [currentData, setCurrentData] = useState<any>();
-
-  const items = React.useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    setCurrentData(row2Column1.slice(start, end));
-    return row2Column1.slice(start, end);
-  }, [page, row2Column1, 10, rowsPerPage]);
-
-  // Selection Logic
-  const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
-  const [allListCheckedPageNumbers, setAllListCheckedPageNumbers] = useState<
-    number[]
-  >([]);
+const InquiriesOnetoOneIdPage = () => {
+  const options = [
+    { key: "1", label: "선택" },
+    { key: "2", label: "일반회원" },
+    { key: "3", label: "판매자" },
+    { key: "4", label: "관리자" },
+  ];
   return (
     <div>
       <CommonHeader title="회원 상세정보" />
-      <article>
-        <Table
-          aria-label="Data Table"
-          shadow="none"
-          classNames={{
-            th: [
-              "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ",
-            ],
-            td: [
-              "px-6 py-3 text-center font-normal text-base text-[#363941]", // General td styles
-            ],
-          }}
-          bottomContent={
-            <div className="mt-8 flex w-full justify-center">
-              <Pagination
-                isCompact
-                showControls
-                showShadow
-                color="secondary"
-                page={page}
-                total={pages}
-                onChange={(page) => setPage(page)}
+      <div className="mt-4 rounded-[20px] bg-mainWhite px-9 py-7">
+        <div className="my-6 flex items-center justify-between">
+          <div>
+            <h3 className="mb-2 text-nowrap font-bold text-mainGray">
+              이름(닉네임)
+            </h3>
+            <div>
+              <Input
+                placeholder="홍길동"
+                type="text"
+                onChange={() => {}}
+                className="w-[350px] rounded-[12px] border-[1px] border-[#DADFE2] bg-[#ffffff] text-[15px] placeholder:text-[16px] placeholder:text-mainBlack"
+                disabled // Makes the input field disabled
               />
             </div>
-          }
-        >
-          <TableHeader className="th-border-1">
-            <TableColumn className="flex items-center justify-center">
-              <Checkbox
-                onClick={() => {
-                  if (allListCheckedPageNumbers.includes(page)) {
-                    setAllListCheckedPageNumbers(
-                      allListCheckedPageNumbers.filter(
-                        (number) => number !== page,
-                      ),
-                    );
-                    setClickedRowIds(
-                      clickedRowIds.filter(
-                        (id) =>
-                          !currentData
-                            .map((item: any) => item.number)
-                            .includes(id),
-                      ),
-                    );
-                  } else {
-                    setClickedRowIds([
-                      ...clickedRowIds,
-                      ...currentData.map((item: any) => item.number),
-                    ]);
-                    setAllListCheckedPageNumbers([
-                      ...allListCheckedPageNumbers,
-                      page,
-                    ]);
-                  }
-                }}
-                className={`size-[14px] rounded-[2px] bg-transparent`}
-                isSelected={allListCheckedPageNumbers.includes(page)}
-              ></Checkbox>
-            </TableColumn>
-            <TableColumn>No</TableColumn>
-            <TableColumn>이름(닉네임)</TableColumn>
-            <TableColumn>아이디(이메일)</TableColumn>
-            <TableColumn>휴대폰 번호</TableColumn>
-            <TableColumn>가입일</TableColumn>
-            <TableColumn>출생년도</TableColumn>
-            <TableColumn>성별</TableColumn>
-            <TableColumn>회원상태</TableColumn>
-          </TableHeader>
-          <TableBody>
-            {items.map((row) => (
-              <TableRow key={row.id} className="border-b-1">
-                <TableCell>
-                  <Checkbox
-                    className={`size-[14px] rounded-[2px] text-center`}
-                    onClick={() => {
-                      if (clickedRowIds.includes(row.number)) {
-                        setClickedRowIds(
-                          clickedRowIds.filter((id) => id !== row.number),
-                        );
-                      } else {
-                        setClickedRowIds([...clickedRowIds, row.number]);
-                      }
-                    }}
-                    isSelected={clickedRowIds.includes(row.number)}
-                  ></Checkbox>
-                </TableCell>
-                <TableCell>{row.No}</TableCell>
+          </div>
+          <div>
+            <h3 className="mb-2 text-nowrap font-bold text-mainGray">
+              아이디(이메일)
+            </h3>
+            <div>
+              <Input
+                placeholder="aaa@aaa.com"
+                type="email"
+                onChange={() => {}}
+                className="w-[350px] rounded-[12px] border-[1px] border-[#DADFE2] bg-[#ffffff] text-[15px] placeholder:text-[16px] placeholder:text-mainBlack"
+                disabled // Makes the input field disabled
+              />
+            </div>
+          </div>
+          <div>
+            <h3 className="mb-2 text-nowrap font-bold text-mainGray">
+              휴대폰 번호
+            </h3>
+            <div>
+              <Input
+                placeholder="010-0000-0000"
+                type="text"
+                onChange={() => {}}
+                className="w-[350px] rounded-[12px] border-[1px] border-[#DADFE2] bg-[#ffffff] text-[15px] placeholder:text-[16px] placeholder:text-mainBlack"
+                disabled // Makes the input field disabled
+              />
+            </div>
+          </div>
+        </div>
 
-                <TableCell>
-                  <Link
-                    href={`/admin/membership/register-member/${row.id}`}
-                    className="text-blue underline underline-offset-2"
-                  >
-                    {row.NickName}
-                  </Link>
-                </TableCell>
-                <TableCell>{row.email}</TableCell>
-                <TableCell>{row.phoneNumber}</TableCell>
-                <TableCell>{row.dateJoining}</TableCell>
-                <TableCell>{row.birthYear}</TableCell>
-                <TableCell>{row.gender}</TableCell>
-                <TableCell>{row.status}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </article>
+        <div className="mb-3">
+          <Input
+            placeholder="가입정보를 확인해 주세요"
+            type="text"
+            onChange={() => {}}
+            className="w-full rounded-[12px] text-[15px] text-mainGray placeholder:text-[16px] placeholder:text-mainBlack"
+            classNames={{
+              inputWrapper: [
+                "bg-[#ffffff] border-[1px] border-[#DADFE2] rounded-[12px]",
+              ],
+              input: ["placeholder:text-mainGray "],
+            }}
+          />
+        </div>
+
+        <div className="my-8 w-full">
+          <Textarea
+            key="bordered"
+            variant="bordered"
+            placeholder="가입정보의 메일 주소를 확인해 주세요"
+            height="590px"
+            classNames={{
+              input: "text-[15px] placeholder:text-mainGray ",
+            }}
+            minRows={8}
+          />
+        </div>
+        <h3 className="mb-2 mt-8 text-nowrap font-bold text-mainGray">답변</h3>
+        <div className="w-full">
+          <Textarea
+            key="bordered"
+            variant="bordered"
+            placeholder="고객님의 메일 주소는 aaa@aaa.com 입니다."
+            height="590px"
+            classNames={{
+              input: "text-[15px]  placeholder:text-mainGray ",
+            }}
+            minRows={8}
+          />
+        </div>
+      </div>
+      <div className="mt-8 flex items-center justify-between">
+        <button className="h-[50px] rounded-xl bg-[#A2ABAF] px-8 py-[14px] text-white">
+          취소
+        </button>
+        <div className="mt-5 flex gap-5">
+          <button className="h-[50px] rounded-xl bg-[#6D8EEB] px-8 py-[14px] text-white">
+            등록
+          </button>
+          <button className="h-[50px] rounded-xl bg-[#424242] px-8 py-[14px] text-white">
+            삭제
+          </button>
+          <button className=""></button>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default InquiryOneToOnePage;
+export default InquiriesOnetoOneIdPage;

@@ -2,20 +2,18 @@ const demo = [
   {
     id: 0,
     number: 0,
-    mainCode: "B002",
-    codeName: "회원종류",
-    useOrNot: "Y",
-    note: "",
-    noOfSubCode: "4",
+    tourTime: "12:00",
+    numberOfParticipant: "10",
   },
 ];
 
-const row1Column4 = [
+const row3Column4 = [
   ...Array.from({ length: 30 }, (_, index) => ({
     ...demo[0],
     id: index + 1,
     number: index + 1,
+    No: index + 1,
   })),
 ];
 
-export default row1Column4;
+export default row3Column4;

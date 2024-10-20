@@ -2,11 +2,11 @@ const demo = [
   {
     id: 0,
     number: 0,
-    mainCode: "B002",
-    codeName: "회원종류",
+    No: "1",
+    date: "2024.08.15",
+    holydayName: "광복절",
     useOrNot: "Y",
     note: "",
-    noOfSubCode: "4",
   },
 ];
 
@@ -15,6 +15,7 @@ const row1Column4 = [
     ...demo[0],
     id: index + 1,
     number: index + 1,
+    No: index + 1,
   })),
 ];
 

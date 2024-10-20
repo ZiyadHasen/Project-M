@@ -1,6 +1,6 @@
 import { Input } from "@nextui-org/react";
 
-const InputWithLabel = ({
+const InputWithLabelActive = ({
   label,
   defaultValue,
   handelChangeText,
@@ -19,7 +19,7 @@ const InputWithLabel = ({
   inputParentStyles?: string;
   inputStyles?: string;
   placeholder?: string;
-  type?: "text" | "number" | "date";
+  type?: "text" | "number" | "date" | "email";
 }) => {
   return (
     <section className={`${mainStyles}`}>
@@ -40,7 +40,7 @@ const InputWithLabel = ({
             onValueChange={handelChangeText}
             classNames={{
               input: [
-                "placeholder:text-[#A1A9A3] placeholder:text-[14px] text-[15px]",
+                "placeholder:text-mainGray placeholder:text-[16px] text-[15px]",
               ],
               inputWrapper: [
                 `${inputStyles}  bg-[#ffffff] border-[1px] border-[#DADFE2] rounded-[12px] `,
@@ -53,4 +53,4 @@ const InputWithLabel = ({
   );
 };
 
-export default InputWithLabel;
+export default InputWithLabelActive;

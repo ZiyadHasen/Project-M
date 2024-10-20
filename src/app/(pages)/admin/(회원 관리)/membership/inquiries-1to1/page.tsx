@@ -1,5 +1,5 @@
-'use client';
-import CommonHeader from '@/components/CommonHeader';
+"use client";
+import CommonHeader from "@/components/CommonHeader";
 import {
   Checkbox,
   Link,
@@ -10,15 +10,15 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
+} from "@nextui-org/react";
 
-import row3Column1 from '@/data/tables/row3Column1';
-import React, { useState } from 'react';
+import row3Column1 from "@/data/tables/row3Column1";
+import React, { useState } from "react";
 
-import MainHead from './head';
-import BlueAndBlackBtn from '@/components/blueAndBlackBtn';
+import MainHead from "./head";
+import BlueAndBlackBtn from "@/components/blueAndBlackBtn";
 
-const registerMember = () => {
+const InquiriesOneToOnePage = () => {
   // Pagination Logic
   const [page, setPage] = useState(1);
 
@@ -42,35 +42,35 @@ const registerMember = () => {
     number[]
   >([]);
   return (
-    <section className='font-noto'>
+    <section className="font-noto">
       <header>
-        <CommonHeader title='1:1 문의 관리 ' />
+        <CommonHeader title="1:1 문의 관리 " />
         <MainHead />
       </header>
-      <main className='rounded-[20px] bg-white py-6 px-5 mt-6 '>
-        <h2 className='font-bold text-[20px] leading-[42px] text-center text-mainBlack'>
+      <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
+        <h2 className="text-center text-[20px] font-bold leading-[42px] text-mainBlack">
           8월 10일 예약현황
         </h2>
 
         <article>
           <Table
-            aria-label='Data Table'
-            shadow='none'
+            aria-label="Data Table"
+            shadow="none"
             classNames={{
               th: [
-                'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ',
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ",
               ],
               td: [
-                'px-6 py-3 text-center font-normal text-base text-[#363941]', // General td styles
+                "px-6 py-3 text-center font-normal text-base text-[#363941]", // General td styles
               ],
             }}
             bottomContent={
-              <div className='flex w-full justify-center  mt-8'>
+              <div className="mt-8 flex w-full justify-center">
                 <Pagination
                   isCompact
                   showControls
                   showShadow
-                  color='secondary'
+                  color="secondary"
                   page={page}
                   total={pages}
                   onChange={(page) => setPage(page)}
@@ -78,23 +78,23 @@ const registerMember = () => {
               </div>
             }
           >
-            <TableHeader className='th-border-1'>
-              <TableColumn className='flex justify-center items-center'>
+            <TableHeader className="th-border-1">
+              <TableColumn className="flex items-center justify-center">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
                       setAllListCheckedPageNumbers(
                         allListCheckedPageNumbers.filter(
-                          (number) => number !== page
-                        )
+                          (number) => number !== page,
+                        ),
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
                           (id) =>
                             !currentData
                               .map((item: any) => item.number)
-                              .includes(id)
-                        )
+                              .includes(id),
+                        ),
                       );
                     } else {
                       setClickedRowIds([
@@ -120,14 +120,14 @@ const registerMember = () => {
             </TableHeader>
             <TableBody>
               {items.map((row) => (
-                <TableRow key={row.id} className='border-b-1'>
+                <TableRow key={row.id} className="border-b-1">
                   <TableCell>
                     <Checkbox
-                      className={`text-center size-[14px] rounded-[2px]`}
+                      className={`size-[14px] rounded-[2px] text-center`}
                       onClick={() => {
                         if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.number)
+                            clickedRowIds.filter((id) => id !== row.number),
                           );
                         } else {
                           setClickedRowIds([...clickedRowIds, row.number]);
@@ -140,8 +140,8 @@ const registerMember = () => {
 
                   <TableCell>
                     <Link
-                      href='/'
-                      className='text-blue underline underline-offset-2'
+                      href={`/admin/membership/inquiries-1to1/${row.id}`}
+                      className="text-blue underline underline-offset-2"
                     >
                       {row.title}
                     </Link>
@@ -149,17 +149,17 @@ const registerMember = () => {
                   <TableCell>{row.author}</TableCell>
                   <TableCell>{row.dateWriting}</TableCell>
                   {/* Conditionally render dateReplay */}
-                  <TableCell>{row.dateReplay ? row.dateReplay : ''}</TableCell>
+                  <TableCell>{row.dateReplay ? row.dateReplay : ""}</TableCell>
 
                   {/* Ensure responseStatus is either "미완료" or "완료" */}
                   <TableCell
                     className={`underline underline-offset-2 ${
-                      row.responseStatus === '완료'
-                        ? 'text-primary'
-                        : 'text-danger'
+                      row.responseStatus === "완료"
+                        ? "text-primary"
+                        : "text-danger"
                     }`}
                   >
-                    {row.responseStatus === '완료' ? '완료' : '미완료'}
+                    {row.responseStatus === "완료" ? "완료" : "미완료"}
                   </TableCell>
                 </TableRow>
               ))}
@@ -172,4 +172,4 @@ const registerMember = () => {
   );
 };
 
-export default registerMember;
+export default InquiriesOneToOnePage;

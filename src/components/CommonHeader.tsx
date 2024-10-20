@@ -8,7 +8,7 @@ const CommonHeader: React.FC<CommonHeaderProps> = ({ title }) => {
   return (
     <>
       <div className='flex justify-end'>
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-2 items-center mb-4'>
           <div className='text-mainGray'>관리자 님</div>
           <button className='bg-[#A2ABAF] px-3 py-1 rounded-sm font-normal text-base text-right text-white'>
             관리자 님

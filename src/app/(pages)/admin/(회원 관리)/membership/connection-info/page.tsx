@@ -13,9 +13,7 @@ import {
 
 import row5Column1 from '@/data/tables/row5Column1';
 import React, { useState } from 'react';
-
 import MainHead from './head';
-import BlueAndBlackBtn from '@/components/blueAndBlackBtn';
 
 const ConnectionInfoPage = () => {
   // Pagination Logic

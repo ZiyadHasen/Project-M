@@ -6,7 +6,7 @@ import InputWithLabelActive from "@/components/InputWithLabelActive";
 import { Input, Textarea } from "@nextui-org/react";
 import React from "react";
 
-const RegisterMemberIdPage = () => {
+const CustomerInquiryIdPage = () => {
   // selection field
   const options = [
     { key: "1", label: "선택" },
@@ -159,4 +159,4 @@ const RegisterMemberIdPage = () => {
   );
 };
 
-export default RegisterMemberIdPage;
+export default CustomerInquiryIdPage;

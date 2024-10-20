@@ -1,5 +1,5 @@
-'use client';
-import CommonHeader from '@/components/CommonHeader';
+"use client";
+import CommonHeader from "@/components/CommonHeader";
 import {
   Checkbox,
   Link,
@@ -10,13 +10,13 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
+} from "@nextui-org/react";
 
-import row6Column1 from '@/data/tables/row6Column1';
-import React, { useState } from 'react';
+import row6Column1 from "@/data/tables/row6Column1";
+import React, { useState } from "react";
 
-import MainHead from './head';
-import BlueAndBlackBtn from '@/components/blueAndBlackBtn';
+import MainHead from "./head";
+import BlueAndBlackBtn from "@/components/blueAndBlackBtn";
 
 const CustomerSatisfactionInquiry = () => {
   // Pagination Logic
@@ -39,32 +39,32 @@ const CustomerSatisfactionInquiry = () => {
   // Selection Logic
 
   return (
-    <section className='font-noto'>
+    <section className="font-noto">
       <header>
-        <CommonHeader title='고객만족도 조회' />
+        <CommonHeader title="고객만족도 조회" />
         <MainHead />
       </header>
 
-      <main className='rounded-[20px] bg-white py-6 px-5 mt-6 '>
+      <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
         <article>
           <Table
-            aria-label='Data Table'
-            shadow='none'
+            aria-label="Data Table"
+            shadow="none"
             classNames={{
               th: [
-                'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ',
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ",
               ],
               td: [
-                'px-6 py-3 text-center font-normal text-base text-[#363941]', // General td styles
+                "px-6 py-3 text-center font-normal text-base text-[#363941]", // General td styles
               ],
             }}
             bottomContent={
-              <div className='flex w-full justify-center  mt-8'>
+              <div className="mt-8 flex w-full justify-center">
                 <Pagination
                   isCompact
                   showControls
                   showShadow
-                  color='secondary'
+                  color="secondary"
                   page={page}
                   total={pages}
                   onChange={(page) => setPage(page)}
@@ -72,24 +72,24 @@ const CustomerSatisfactionInquiry = () => {
               </div>
             }
           >
-            <TableHeader className='th-border-1'>
+            <TableHeader className="th-border-1">
               <TableColumn>접속일자</TableColumn>
               <TableColumn>페이지 접속 수</TableColumn>
               <TableColumn>비고</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
-                <TableRow key={row.id} className='border-b-1'>
+                <TableRow key={row.id} className="border-b-1">
                   <TableCell>
                     <Link
-                      href='/'
-                      className='text-blue underline underline-offset-2'
+                      href={`/admin/membership/customer-inquiry/${row.id}`}
+                      className="text-blue underline underline-offset-2"
                     >
                       {row.evaluationDay}
                     </Link>
                   </TableCell>
                   <TableCell>{row.numberOfEvaluator}</TableCell>
-                  <TableCell width='400px'>{row.note}</TableCell>
+                  <TableCell width="400px">{row.note}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

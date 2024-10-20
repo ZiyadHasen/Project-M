@@ -143,7 +143,7 @@ const registerMember = () => {
 
                   <TableCell>
                     <Link
-                      href='/admin/membership/register-member/'
+                      href={`/admin/membership/register-member/${row.id}`}
                       className='text-blue underline underline-offset-2'
                     >
                       {row.NickName}

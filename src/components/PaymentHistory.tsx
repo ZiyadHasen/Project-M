@@ -13,7 +13,7 @@ import {
 } from "@nextui-org/react";
 import HeaderDropDown from "@/components/HeaderDropDown";
 
-import row1Column3 from "@/data/tables/row1Column3";
+import row1Column3 from "@/data/tables/column1&2/row1Column3";
 import row1Column3Columns from "@/data/columns/row1column3Columns";
 
 const PaymentHistory = () => {
@@ -64,11 +64,11 @@ const PaymentHistory = () => {
   >([]);
 
   return (
-    <main className="rounded-[20px] bg-white py-6 px-5 mt-6 ">
+    <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
       <div className="flex items-center justify-between">
-        <p className="font-bold text-[16px] text-mainBlack">총 00건</p>
+        <p className="text-[16px] font-bold text-mainBlack">총 00건</p>
 
-        <div className="flex justify-center items-center gap-3">
+        <div className="flex items-center justify-center gap-3">
           <HeaderDropDown
             options={viewOptions}
             defaultSelectedKey={viewOptionsDefault}
@@ -91,7 +91,7 @@ const PaymentHistory = () => {
             td: ["px-6  text-center font-normal text-base text-[#363941] "],
           }}
           bottomContent={
-            <div className="flex w-full justify-center  mt-8">
+            <div className="mt-8 flex w-full justify-center">
               <Pagination
                 isCompact
                 showControls
@@ -105,22 +105,22 @@ const PaymentHistory = () => {
           }
         >
           <TableHeader>
-            <TableColumn className="flex justify-center items-center">
+            <TableColumn className="flex items-center justify-center">
               <Checkbox
                 onClick={() => {
                   if (allListCheckedPageNumbers.includes(page)) {
                     setAllListCheckedPageNumbers(
                       allListCheckedPageNumbers.filter(
-                        (number) => number !== page
-                      )
+                        (number) => number !== page,
+                      ),
                     );
                     setClickedRowIds(
                       clickedRowIds.filter(
                         (id) =>
                           !currentData
                             .map((item: any) => item.number)
-                            .includes(id)
-                      )
+                            .includes(id),
+                      ),
                     );
                   } else {
                     setClickedRowIds([
@@ -149,11 +149,11 @@ const PaymentHistory = () => {
               <TableRow key={row.id} className="border-b-1">
                 <TableCell>
                   <Checkbox
-                    className={`text-center size-[14px] rounded-[2px]`}
+                    className={`size-[14px] rounded-[2px] text-center`}
                     onClick={() => {
                       if (clickedRowIds.includes(row.number)) {
                         setClickedRowIds(
-                          clickedRowIds.filter((id) => id !== row.number)
+                          clickedRowIds.filter((id) => id !== row.number),
                         );
                       } else {
                         setClickedRowIds([...clickedRowIds, row.number]);

@@ -12,7 +12,7 @@ import {
   TableRow,
 } from "@nextui-org/react";
 
-import row4Column1 from "@/data/tables/row4Column1";
+import row4Column1 from "@/data/tables/column1&2/row4Column1";
 import React, { useState } from "react";
 
 import MainHead from "./head";

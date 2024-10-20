@@ -1,5 +1,5 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 import {
   Button,
@@ -11,12 +11,12 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
-} from '@nextui-org/react';
+} from "@nextui-org/react";
 
-import CommonHeader from '@/components/CommonHeader';
-import row1Column1 from '@/data/tables/row1Column1';
-import Head from './head';
-import BlueAndBlackBtn from '@/components/blueAndBlackBtn';
+import CommonHeader from "@/components/CommonHeader";
+import row1Column1 from "@/data/tables/column1&2/row1Column1";
+import Head from "./head";
+import BlueAndBlackBtn from "@/components/blueAndBlackBtn";
 
 const MemberManagementPage = () => {
   // Pagination Logic
@@ -43,36 +43,36 @@ const MemberManagementPage = () => {
   >([]);
 
   return (
-    <section className='font-noto'>
+    <section className="font-noto">
       <header>
-        <CommonHeader title='2024년 8월 회원 현황' />
+        <CommonHeader title="2024년 8월 회원 현황" />
         <Head />
       </header>
 
-      <main className='rounded-[20px] bg-white py-6 px-5 mt-6 '>
-        <h2 className='font-bold text-[20px] leading-[42px] text-center text-mainBlack'>
+      <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
+        <h2 className="text-center text-[20px] font-bold leading-[42px] text-mainBlack">
           8월 10일 예약현황
         </h2>
 
         <article>
           <Table
-            aria-label='Data Table'
-            shadow='none'
+            aria-label="Data Table"
+            shadow="none"
             classNames={{
               th: [
-                'font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ',
+                "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px]  text-center ",
               ],
               td: [
-                'px-6 py-3 text-center font-normal text-base text-[#363941]', // General td styles
+                "px-6 py-3 text-center font-normal text-base text-[#363941]", // General td styles
               ],
             }}
             bottomContent={
-              <div className='flex w-full justify-center  mt-8'>
+              <div className="mt-8 flex w-full justify-center">
                 <Pagination
                   isCompact
                   showControls
                   showShadow
-                  color='secondary'
+                  color="secondary"
                   page={page}
                   total={pages}
                   onChange={(page) => setPage(page)}
@@ -80,23 +80,23 @@ const MemberManagementPage = () => {
               </div>
             }
           >
-            <TableHeader className='th-border-1'>
-              <TableColumn className='flex justify-center items-center'>
+            <TableHeader className="th-border-1">
+              <TableColumn className="flex items-center justify-center">
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
                       setAllListCheckedPageNumbers(
                         allListCheckedPageNumbers.filter(
-                          (number) => number !== page
-                        )
+                          (number) => number !== page,
+                        ),
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
                           (id) =>
                             !currentData
                               .map((item: any) => item.number)
-                              .includes(id)
-                        )
+                              .includes(id),
+                        ),
                       );
                     } else {
                       setClickedRowIds([
@@ -122,14 +122,14 @@ const MemberManagementPage = () => {
             </TableHeader>
             <TableBody>
               {items.map((row) => (
-                <TableRow key={row.id} className='border-b-1'>
+                <TableRow key={row.id} className="border-b-1">
                   <TableCell>
                     <Checkbox
-                      className={`text-center size-[14px] rounded-[2px]`}
+                      className={`size-[14px] rounded-[2px] text-center`}
                       onClick={() => {
                         if (clickedRowIds.includes(row.number)) {
                           setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.number)
+                            clickedRowIds.filter((id) => id !== row.number),
                           );
                         } else {
                           setClickedRowIds([...clickedRowIds, row.number]);

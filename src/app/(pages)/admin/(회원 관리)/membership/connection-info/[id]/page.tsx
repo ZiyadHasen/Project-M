@@ -12,19 +12,18 @@ import {
   TableRow,
 } from "@nextui-org/react";
 
-import row2Column1 from "@/data/tables/column1&2/row2Column1";
+import row5Column2 from "@/data/tables/column1&2/row5Column2";
 import React, { useState } from "react";
 
-import MainHead from "./head";
 import BlueAndBlackBtn from "@/components/blueAndBlackBtn";
 
-const registerMember = () => {
+const ConnectionInfoIdPage = () => {
   // Pagination Logic
   const [page, setPage] = useState(1);
 
   const rowsPerPage = 10;
 
-  const pages = Math.ceil(row2Column1.length / rowsPerPage);
+  const pages = Math.ceil(row5Column2.length / rowsPerPage);
 
   const [currentData, setCurrentData] = useState<any>();
 
@@ -32,9 +31,9 @@ const registerMember = () => {
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
-    setCurrentData(row2Column1.slice(start, end));
-    return row2Column1.slice(start, end);
-  }, [page, row2Column1, 10, rowsPerPage]);
+    setCurrentData(row5Column2.slice(start, end));
+    return row5Column2.slice(start, end);
+  }, [page, row5Column2, 10, rowsPerPage]);
 
   // Selection Logic
   const [clickedRowIds, setClickedRowIds] = useState<number[]>([]);
@@ -45,13 +44,10 @@ const registerMember = () => {
     <section className="font-noto">
       <header>
         <CommonHeader title="2024년 8월 회원 현황" />
-        <MainHead />
       </header>
 
       <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
-        <h2 className="text-center text-[20px] font-bold leading-[42px] text-mainBlack">
-          8월 10일 예약현황
-        </h2>
+        <h2 className="py-1"></h2>
 
         <article>
           <Table
@@ -113,13 +109,9 @@ const registerMember = () => {
                 ></Checkbox>
               </TableColumn>
               <TableColumn>No</TableColumn>
+              <TableColumn>접속일자</TableColumn>
               <TableColumn>이름(닉네임)</TableColumn>
               <TableColumn>아이디(이메일)</TableColumn>
-              <TableColumn>휴대폰 번호</TableColumn>
-              <TableColumn>가입일</TableColumn>
-              <TableColumn>출생년도</TableColumn>
-              <TableColumn>성별</TableColumn>
-              <TableColumn>회원상태</TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
@@ -141,32 +133,23 @@ const registerMember = () => {
                   </TableCell>
                   <TableCell>{row.No}</TableCell>
 
-                  <TableCell>
-                    <Link
-                      href={`/admin/membership/register-member/${row.id}`}
-                      className="text-blue underline underline-offset-2"
-                    >
-                      {row.NickName}
-                    </Link>
-                  </TableCell>
+                  <TableCell>{row.dateOfAccess}</TableCell>
+                  <TableCell>{row.name}</TableCell>
                   <TableCell>{row.email}</TableCell>
-                  <TableCell>{row.phoneNumber}</TableCell>
-                  <TableCell>{row.dateJoining}</TableCell>
-                  <TableCell>{row.birthYear}</TableCell>
-                  <TableCell>{row.gender}</TableCell>
-                  <TableCell>{row.status}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </article>
-        <div className="mt-8 flex justify-between">
-          <div></div>
-          <BlueAndBlackBtn />
-        </div>
       </main>
+      <div className="mt-8 flex justify-between">
+        <div></div>
+        <button className="h-[50px] rounded-xl bg-[#424242] px-8 py-[14px] text-white">
+          삭제
+        </button>
+      </div>
     </section>
   );
 };
 
-export default registerMember;
+export default ConnectionInfoIdPage;

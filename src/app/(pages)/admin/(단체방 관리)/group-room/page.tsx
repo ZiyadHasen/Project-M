@@ -1,5 +1,5 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 
 import {
   Button,
@@ -11,15 +11,15 @@ import {
   TableCell,
   Pagination,
   Checkbox,
-} from '@nextui-org/react';
-import InputWithLabel from '@/components/InputWithLabel';
-import DropDownWithLabel from '@/components/DropDownWithLabel';
-import InputNoLabel from '@/components/InputNoLable';
-import HeaderDropDown from '@/components/HeaderDropDown';
+} from "@nextui-org/react";
+import InputWithLabel from "@/components/InputWithLabel";
+import DropDownWithLabel from "@/components/DropDownWithLabel";
+import InputNoLabel from "@/components/InputNoLable";
+import HeaderDropDown from "@/components/HeaderDropDown";
 
-import row2Column1 from '@/data/tables/row2Column1';
-import row2Column1Columns from '@/data/columns/row2Column1Columns';
-import Link from 'next/link';
+import row2Column1 from "@/data/tables/column1&2/row2Column1";
+import row2Column1Columns from "@/data/columns/row2Column1Columns";
+import Link from "next/link";
 
 const GroupRoomPage = () => {
   // const options = [

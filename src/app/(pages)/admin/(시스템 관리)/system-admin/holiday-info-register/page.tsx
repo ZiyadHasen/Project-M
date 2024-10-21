@@ -48,10 +48,6 @@ const TourTimeAppliesPage = () => {
       </header>
 
       <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
-        <h2 className="text-center text-[20px] font-bold leading-[42px] text-mainBlack">
-          8월 10일 예약현황
-        </h2>
-
         <article>
           <Table
             aria-label="Data Table"

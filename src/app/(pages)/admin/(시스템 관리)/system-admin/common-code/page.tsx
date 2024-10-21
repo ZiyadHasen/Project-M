@@ -43,15 +43,11 @@ const CommonCodePage = () => {
   return (
     <section className="font-noto">
       <header>
-        <CommonHeader title="공통코드" />
+        <CommonHeader title="투어시간 관리" />
         <MainHead />
       </header>
 
       <main className="mt-6 rounded-[20px] bg-white px-5 py-6">
-        <h2 className="text-center text-[20px] font-bold leading-[42px] text-mainBlack">
-          8월 10일 예약현황
-        </h2>
-
         <article>
           <Table
             aria-label="Data Table"

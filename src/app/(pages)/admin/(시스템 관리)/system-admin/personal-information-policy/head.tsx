@@ -1,6 +1,8 @@
 import MainButton from "@/components/button";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
 import InputWithLabel from "@/components/InputWithLabel";
+import { Checkbox, CheckboxGroup } from "@nextui-org/react";
+import React from "react";
 
 const MainHead = () => {
   // selection field
@@ -10,21 +12,23 @@ const MainHead = () => {
     { key: "3", label: "판매자" },
     { key: "4", label: "관리자" },
   ];
+
   return (
-    <div className="mt-4 rounded-[20px] bg-mainWhite px-9 py-7">
+    <div className="my-6 rounded-[20px] bg-mainWhite px-9 py-7">
       <div className="mt-[20px] flex items-end justify-between">
         <InputWithLabel
-          label="평가문항"
+          label="조회시작일"
           placeholder="입력"
           inputStyles="w-[350px] h-[44px]"
+          type="text"
         />
-        <DropDownWithLabel
-          title="사용여부"
-          options={options}
-          defaultSelectedKeys="1"
-          titleStyles="  w-[90px]"
-          insideStyles=" w-[350px] h-[44px] "
+        <InputWithLabel
+          label="조회종료일"
+          placeholder="입력"
+          inputStyles="w-[350px] h-[44px]"
+          type="text"
         />
+
         <MainButton text="조회" />
       </div>
     </div>

@@ -20,20 +20,44 @@ const HolyDayInfoRegisterIdPage = () => {
       <div className="mt-4 rounded-[20px] bg-mainWhite px-9 py-7">
         <div className="my-6 flex items-center justify-between">
           <InputWithLabelActive
-            label="투어시간"
-            placeholder="12:0"
+            label="투어일자"
+            placeholder="2024.08.15"
             inputStyles="w-[350px] h-[44px] "
             type="text"
             defaultValue=""
           />
           <InputWithLabelActive
-            label="투어인원"
+            label="투어시간"
+            placeholder="12:00"
+            inputStyles="w-[350px] h-[44px] "
+            type="email"
+            defaultValue=""
+          />
+          <InputWithLabelActive
+            label="투어시간"
             placeholder="30"
             inputStyles="w-[350px] h-[44px] "
             type="email"
             defaultValue=""
           />
-          <div className="w-[350px]"></div>
+        </div>
+        <div className="my-6 flex items-center justify-between">
+          <div>
+            <h3 className="mb-2 text-nowrap font-bold text-mainGray">
+              예약인원
+            </h3>
+            <div>
+              <Input
+                placeholder="10"
+                type="text"
+                onChange={() => {}}
+                className="w-[350px] rounded-[12px] border-[1px] border-[#DADFE2] bg-[#ffffff] text-[15px] placeholder:text-[16px] placeholder:text-mainBlack"
+                disabled // Makes the input field disabled
+              />
+            </div>
+            <div className="w-[350px]"></div>
+            <div className="w-[350px]"></div>
+          </div>
         </div>
       </div>
       <div className="mt-6 flex items-center justify-between">
